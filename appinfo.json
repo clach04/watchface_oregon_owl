@@ -28,6 +28,7 @@
     "sdkVersion": "3",
     "shortName": "OregonOwl",
     "targetPlatforms": [
+        "aplite",
         "basalt",
         "chalk"
     ],
