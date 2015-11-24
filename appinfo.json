@@ -1,0 +1,39 @@
+{
+    "appKeys": {
+        "KEY_BACKGROUND_COLOR": 2,
+        "KEY_TIME_COLOR": 0,
+        "KEY_VIBRATE_ON_DISCONNECT": 1
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "clach04",
+    "longName": "Oregon Owl",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/picture_132x132.png",
+                "name": "IMAGE_MAIN",
+                "type": "png"
+            },
+            {
+                "file": "images/icon_28x28.png",
+                "menuIcon": true,
+                "name": "IMAGE_ICON",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "OregonOwl",
+    "targetPlatforms": [
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "b18764cd-0e52-47a0-8eda-169468be2116",
+    "versionLabel": "0.1",
+    "watchapp": {
+        "watchface": true
+    }
+}
