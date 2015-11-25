@@ -46,6 +46,9 @@
 /***********************/
 /* Use custom routines */
 /***********************/
+
+//#define FAST_SWITCH  /* useful for debug */
+
 #define TICK_HANDLER custom_tick_handler
 extern void custom_tick_handler(struct tm *tick_time, TimeUnits units_changed);
 

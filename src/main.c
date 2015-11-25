@@ -20,9 +20,9 @@ static GBitmap     *s_background_bitmap_alt=NULL;
 
 
 void custom_main_window_load(Window *window) {
-    Layer *window_layer = window_get_root_layer(window);
-    //GRect bounds = layer_get_bounds(window_layer);  /* screen size, center image */
-    GRect bounds =BG_IMAGE_GRECT;  /* Hand crafted - TODO #ifdef check?*/
+    Layer *window_layer=window_get_root_layer(window);
+    //GRect bounds=layer_get_bounds(window_layer);  /* screen size, center image */
+    GRect bounds=BG_IMAGE_GRECT;  /* Hand crafted - TODO #ifdef check?*/
     
 
     // Create GBitmap, then set to created BitmapLayer
@@ -30,7 +30,17 @@ void custom_main_window_load(Window *window) {
     s_background_bitmap_alt = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ALT);
     
     s_background_layer = bitmap_layer_create(bounds);
+
+#ifdef FAST_SWITCH
+    /* show s_bg_image and then within 1 second show the next image */
     if (s_bg_image == RESOURCE_ID_IMAGE_MAIN)
+#else /* not FAST_SWITCH */
+    /*
+    ** set reverse image,  TICK_HANDLER()/custom_tick_handler() is called
+    ** almost immediately which will toggle the image
+    */
+    if (s_bg_image != RESOURCE_ID_IMAGE_MAIN)
+#endif /* FAST_SWITCH/KEEP_IMAGE */
     {
         bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap_main);
     }
@@ -38,6 +48,7 @@ void custom_main_window_load(Window *window) {
     {
         bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap_alt);
     }
+
 #ifdef PBL_PLATFORM_APLITE
      bitmap_layer_set_compositing_mode(s_background_layer, GCompOpAssign);
 #elif PBL_PLATFORM_BASALT
