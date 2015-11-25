@@ -21,9 +21,12 @@ static GBitmap     *s_background_bitmap_alt=NULL;
 
 void custom_main_window_load(Window *window) {
     Layer *window_layer=window_get_root_layer(window);
-    //GRect bounds=layer_get_bounds(window_layer);  /* screen size, center image */
-    GRect bounds=BG_IMAGE_GRECT;  /* Hand crafted - TODO #ifdef check?*/
-    
+#ifdef BG_IMAGE_GRECT
+    GRect bounds=BG_IMAGE_GRECT;  /* Hand crafted */
+#else /* BG_IMAGE_GRECT */
+    GRect bounds=layer_get_bounds(window_layer);  /* screen size, center image */
+#endif /* BG_IMAGE_GRECT */
+
 
     // Create GBitmap, then set to created BitmapLayer
     s_background_bitmap_main = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_MAIN);
