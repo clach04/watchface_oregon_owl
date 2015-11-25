@@ -14,7 +14,7 @@
 
 static BitmapLayer *s_background_layer=NULL;  /* NOTE s_bg_image is NOT defined */
 
-static uint32_t s_bg_image=RESOURCE_ID_IMAGE_MAIN;  // or RESOURCE_ID_IMAGE_ALT
+static uint32_t s_bg_image=RESOURCE_ID_IMAGE_ALT;  // or RESOURCE_ID_IMAGE_MAIN
 static GBitmap     *s_background_bitmap_main=NULL;
 static GBitmap     *s_background_bitmap_alt=NULL;
 
