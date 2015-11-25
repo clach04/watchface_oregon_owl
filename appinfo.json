@@ -13,6 +13,11 @@
     "resources": {
         "media": [
             {
+                "file": "images/picture_alt_132x132.png",
+                "name": "IMAGE_ALT",
+                "type": "png"
+            },
+            {
                 "file": "images/picture_132x132.png",
                 "name": "IMAGE_MAIN",
                 "type": "png"

@@ -15,7 +15,7 @@
 #define NO_BATTERY /* Do not show battery status */
 #define NO_DATE /* Do not show date */
 
-#define BG_IMAGE RESOURCE_ID_IMAGE_MAIN
+//#define BG_IMAGE RESOURCE_ID_IMAGE_MAIN
 #define IMAGE_RES_X 132  /* NOTE if image res changes - this needs to change too! */
 #define IMAGE_RES_Y 132  /* NOTE if image res changes - this needs to change too! */
 
@@ -41,3 +41,24 @@
     /* NOTE date not used */
     #define DATE_POS GRect(0, 140, 144, 168) /* probably taller than really needed */
 #endif /* end of Round or rectangle */
+
+
+/***********************/
+/* Use custom routines */
+/***********************/
+#define TICK_HANDLER custom_tick_handler
+extern void custom_tick_handler(struct tm *tick_time, TimeUnits units_changed);
+
+#define MAIN_WINDOW_LOAD custom_main_window_load
+extern void custom_main_window_load(Window *window);
+
+#define MAIN_WINDOW_UNLOAD custom_main_window_unload
+extern void custom_main_window_unload(Window *window);
+
+/***********************/
+
+/* for screen shots
+#define DEBUG_TICK_HANDLER custom_tick_handler
+#define DEBUG_TIME
+#define DEBUG_TIME_PAUSE 2000
+ */
