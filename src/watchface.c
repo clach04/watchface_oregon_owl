@@ -516,13 +516,11 @@ void init()
 
     /* Register events; TickTimerService, Battery */
     tick_timer_service_subscribe(MINUTE_UNIT, TICK_HANDLER);
-//#ifdef DO_NOT_DEF
 #ifdef DEBUG_TIME
     #ifndef DEBUG_TIME_SCREENSHOT
         tick_timer_service_subscribe(SECOND_UNIT, DEBUG_TICK_HANDLER);
     #endif /* DEBUG_TIME_SCREENSHOT */
 #endif /* DEBUG_TIME */
-//#endif
 
     /* TODO use AppSync instead? */
     app_message_register_inbox_received(in_recv_handler);
