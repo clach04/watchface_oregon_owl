@@ -62,6 +62,7 @@ extern void custom_main_window_unload(Window *window);
 
 /* for screen shots
 #define DEBUG_TICK_HANDLER custom_tick_handler
+#define DEBUG_TIME_SCREENSHOT
 #define DEBUG_TIME
 #define DEBUG_TIME_PAUSE 2000
  */
